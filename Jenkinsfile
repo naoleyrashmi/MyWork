@@ -12,12 +12,7 @@ pipeline {
 		stage ('Building and running the container') {
 			steps{
 				sh (script: '''
-                          	#!/bin/bash
-				            // # SEtting Docker remote host
-							// export DOCKER_HOST=$DockerHost
-							// echo $DOCKER_HOST
-				            export AppPortNumber=$AppPortNumber
-							# Run the  Stack
+				            export AppPortNumber=$AppPortNumber	
 						    docker-compose --project-name $AppPortNumber up -d
 						''')
 			 	}
